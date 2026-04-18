@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
+import surah from './routes/surah'
 
 const app = new Hono()
 
@@ -10,9 +11,7 @@ app.use('*', cors())
 
 //main routes
 
-
-
-
+app.route('/surah', surah)
 
 
 
