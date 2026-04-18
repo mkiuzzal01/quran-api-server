@@ -6,6 +6,16 @@ const app = new Hono()
 // Middleware
 app.use('*', cors())
 
+
+
+//main routes
+
+
+
+
+
+
+
 // Health check
 app.get('/', (c) => {
   return c.json({
