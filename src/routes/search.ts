@@ -28,7 +28,7 @@ search.get(
             surah: surah.surah,
             surah_name_en: surah.name_en,
             surah_name_ar: surah.name_ar,
-            ayah_number: ayah.number,
+            ayah_number: ayah.number, 
             text_en: ayah.text_en,
             text_ar: ayah.text_ar
           })
