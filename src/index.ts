@@ -1,28 +1,9 @@
-import { Hono } from 'hono'
-import { cors } from 'hono/cors'
+import { serve } from '@hono/node-server'
+import app from './app'
 
-const app = new Hono()
-
-// Middleware
-app.use('*', cors())
-
-// Health check
-app.get('/', (c) => {
-  return c.json({
-    status: 'ok',
-    message: 'Quran API is running'
-  })
+serve({
+    fetch: app.fetch,
+    port: 3001
 })
 
-// 404 handler
-app.notFound((c) => {
-  return c.json({ message: 'Not Found' }, 404)
-})
-
-// Error handler
-app.onError((err, c) => {
-  console.error(err)
-  return c.json({ message: 'Internal Server Error' }, 500)
-})
-
-export default app
+console.log('Server is running on port 3001')
