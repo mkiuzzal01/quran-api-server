@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import surah from './routes/surah'
+import search from './routes/search'
 
 const app = new Hono()
 
@@ -12,13 +13,13 @@ app.use('*', cors())
 //main routes
 
 app.route('/surah', surah)
-
+app.route('/search', search)
 
 
 // Health check
 app.get('/', (c) => {
   return c.json({
-    status: 'ok',
+    status: 'Ok',
     message: 'Quran API is running'
   })
 })
